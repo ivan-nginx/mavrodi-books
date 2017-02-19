@@ -1696,7 +1696,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4;
+  background: #2f4d9e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2888,6 +2888,7 @@ body {
 }
 .cc-license img {
   display: block;
+  opacity: 0.6;
 }
 .post-time {
   display: none;
