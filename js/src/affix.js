@@ -34,6 +34,7 @@
 
   Affix.DEFAULTS = {
     offset: 0,
+//    offset: CONFIG.sidebar.offset,
     target: window
   }
 
