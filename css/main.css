@@ -954,6 +954,9 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
+.back-to-top:hover {
+  opacity: 0.8;
+}
 @media (max-width: 767px) {
   .back-to-top {
     display: none;
@@ -1696,7 +1699,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #456ac2;
+  background: #394b61;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2889,6 +2892,12 @@ body {
 .cc-license img {
   vertical-align: sub;
   margin-right: 3px;
+}
+.cc-license .cc-opacity {
+  opacity: 0.6;
+}
+.cc-license .cc-opacity:hover {
+  opacity: 0.8;
 }
 .post-time {
   display: none;
