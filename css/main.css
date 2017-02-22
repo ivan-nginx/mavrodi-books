@@ -1580,9 +1580,9 @@ pre .javascript .function {
   position: fixed;
   right: 30px;
   bottom: 45px;
-  width: 15px;
+  width: 14px;
   height: 14px;
-  padding: 5px 4.25px;
+  padding: 5px;
   background: #222;
   line-height: 0;
   z-index: 1050;
@@ -1699,7 +1699,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #65cbff;
+  background: #61a13e;
 }
 .links-of-blogroll {
   font-size: 13px;
