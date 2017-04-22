@@ -286,9 +286,6 @@ a:hover {
   color: #222;
   border-bottom-color: #222;
 }
-ul {
-  list-style: none;
-}
 blockquote {
   margin: 0;
   padding: 0;
@@ -1073,6 +1070,7 @@ pre .javascript .function {
 .menu .menu-item {
   display: inline-block;
   margin: 0 10px;
+  list-style: none;
 }
 @media screen and (max-width: 767px) {
   .menu .menu-item {
@@ -1699,7 +1697,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cfff3c;
+  background: #ff1dc8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2685,7 +2683,6 @@ a.search-result-title {
 .menu .menu-item {
   display: block;
   margin: 0;
-  list-style: none;
 }
 .menu .menu-item a {
   position: relative;
