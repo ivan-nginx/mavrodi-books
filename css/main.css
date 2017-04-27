@@ -1698,7 +1698,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b9ad41;
+  background: #204add;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2874,7 +2874,9 @@ body {
   font-size: 14px;
 }
 .posts-collapse .post-title {
-  margin-left: 65px;
+  text-align: initial;
+  border-bottom: initial;
+  margin: 0 0 0 65px;
 }
 .site-title {
   margin: 0 10px 0;
