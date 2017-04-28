@@ -96,7 +96,7 @@
 
 
 ФОРУМ — 2.«Я есмь Альфа и Омега, начало и конец, … Первый и Последний».Откровение Иоанна Богос">
-<meta property="og:updated_time" content="2017-01-26T12:22:01.000Z">
+<meta property="og:updated_time" content="2017-04-28T11:35:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Искушение. Сын Люцифера — День 134, Форум — 2">
 <meta name="twitter:description" content="И настал сто тридцать четвёртый день.
@@ -210,7 +210,7 @@
     </a>
   </div>
     
-      <h1 class="site-subtitle" itemprop="description">Читать онлайн «Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги.</h1>
+      <h1 class="site-subtitle" itemprop="description">«Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги — читать онлайн.</h1>
     
 </div>
 
@@ -362,8 +362,8 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
                 
-                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-01-26T15:22:01+03:00">
-                    2017-01-26
+                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-04-28T14:35:33+03:00">
+                    2017-04-28
                   </time>
             
           </span>
@@ -498,7 +498,7 @@
 <p>Ну, вот Дьявол совершает какой-то поступок. Это зло. По определению. А теперь этот же поступок повторяет Бог. Это уже добро? Тоже по определению?</p>
 <div class="text-left"><br><strong>From L1 to SATAN</strong></div>
 
-<p>Что значит «повторяет Бог»?! Бог повторяет поступок Дьявола?</p>
+<p>Что значит «повторяет Бог»?! Бог повторяет поступок дьявола?</p>
 <div class="text-left"><br><strong>From SATAN to L1</strong></div>
 
 <p>Ведь ты же сам признал только что, что для Бога не существует запретных поступков? Значит, Он может и повторить поступок Дьявола.</p>
@@ -520,6 +520,7 @@
 <div class="text-left"><br><strong>From SATAN to L1</strong></div>
 
 <p>Хорошо. Подойдём к этой проблеме с другой стороны.</p>
+<p><br></p>
 <p>Предположим, явился в мир Антихрист. И он хочет выдать себя за Христа. С этой целью он совершает добрые поступки. <strong><em>Только добрые</em></strong>. Полностью повторяет путь Христа. (Без распятья, естественно!) Учит всех светлому, хорошему и пр. Но всё это для того лишь, чтобы заманить людей, увлечь их за собой, заставить уверовать в себя, а потом тем вернее обмануть и погубить. </p>
 <p>Может такое в принципе быть? Ведь коварство Врага Человеческого поистине беспредельно.</p>
 <div class="text-left"><br><strong>From L1 to SATAN</strong></div>
@@ -540,7 +541,9 @@
 <div class="text-left"><br><strong>From SATAN to L1</strong></div>
 
 <p>Как «ну, и что»? Сначала поверят, а потом усомнятся и отвернуться? Как можно сомневаться в поступках Бога? Где же тут вера? Вера не ведает сомнений. И сказано же ведь: пути Господни неисповедимы. Как ты можешь подвергать сомнению поступки Бога? Что бы Он ни делал – всё правильно! Просто ты этого, возможно, не понимаешь. Не постигаешь всей премудрости и глубины замысла Господня. Ты ведь всего лишь человек.</p>
+<p><br></p>
 <p>У тебя гибнет ребёнок. Ты же не ропщешь на Бога? Не богохульствуешь? Ты просто смиряешься. Так же точно и здесь. </p>
+<p><br></p>
 <p>Да и какое вообще «зло» может сделать Антихрист? </p>
 <p>Написано же в Апокалипсисе:</p>
 <p>«Первый Ангел вострубил, и сделались град и огонь, смешанные с кровью, и пали на землю; и третья часть дерев сгорела и вся трава зеленая сгорела.</p>
@@ -892,6 +895,7 @@
       $('.popup').hide();
       $('#local-search-input').val('');
       $('.search-result-list').remove();
+      $('#no-result').remove();
       $(".local-search-pop-overlay").remove();
       $('body').css('overflow', '');
     }
@@ -908,6 +912,13 @@
     // search function;
     var searchFunc = function(path, search_id, content_id) {
       'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"><img id="search-loading-img" src="/images/search-loading.svg"/></div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-img").css('margin', '20% auto 0 auto');
+
       $.ajax({
         url: path,
         dataType: "xml",
@@ -1143,9 +1154,15 @@
               }
             });
           }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
           proceedsearch();
         }
-      });}
+      });
+    }
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
@@ -1160,6 +1177,13 @@
     $('.popup-btn-close').click(onPopupClose);
     $('.popup').click(function(e){
       e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
     });
   </script>
 

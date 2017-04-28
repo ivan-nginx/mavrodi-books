@@ -201,7 +201,7 @@
     </a>
   </div>
     
-      <h1 class="site-subtitle" itemprop="description">Читать онлайн «Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги.</h1>
+      <h1 class="site-subtitle" itemprop="description">«Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги — читать онлайн.</h1>
     
 </div>
 
@@ -1115,6 +1115,7 @@
       $('.popup').hide();
       $('#local-search-input').val('');
       $('.search-result-list').remove();
+      $('#no-result').remove();
       $(".local-search-pop-overlay").remove();
       $('body').css('overflow', '');
     }
@@ -1131,6 +1132,13 @@
     // search function;
     var searchFunc = function(path, search_id, content_id) {
       'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"><img id="search-loading-img" src="/images/search-loading.svg"/></div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-img").css('margin', '20% auto 0 auto');
+
       $.ajax({
         url: path,
         dataType: "xml",
@@ -1366,9 +1374,15 @@
               }
             });
           }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
           proceedsearch();
         }
-      });}
+      });
+    }
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
@@ -1383,6 +1397,13 @@
     $('.popup-btn-close').click(onPopupClose);
     $('.popup').click(function(e){
       e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
     });
   </script>
 

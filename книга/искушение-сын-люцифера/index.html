@@ -80,17 +80,17 @@
 
 
 
-<meta name="description" content="Читать онлайн «Искушение. Сын Люцифера» полную версию (144 дня) без редакторских правок.">
+<meta name="description" content="«Сын Люцифера / Искушение» полная версия (144 дня / новеллы) без редакторских правок — читать онлайн бесплатно.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Искушение. Сын Люцифера">
 <meta property="og:url" content="http://xn----8sbgbitbekygtz.xn--p1ai/книга/искушение-сын-люцифера/">
 <meta property="og:site_name" content="Книги Мавроди">
-<meta property="og:description" content="Читать онлайн «Искушение. Сын Люцифера» полную версию (144 дня) без редакторских правок.">
+<meta property="og:description" content="«Сын Люцифера / Искушение» полная версия (144 дня / новеллы) без редакторских правок — читать онлайн бесплатно.">
 <meta property="og:image" content="http://xn----8sbgbitbekygtz.xn--p1ai/искушение-сын-люцифера.jpg">
-<meta property="og:updated_time" content="2017-02-18T00:05:13.000Z">
+<meta property="og:updated_time" content="2017-04-28T09:21:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Искушение. Сын Люцифера">
-<meta name="twitter:description" content="Читать онлайн «Искушение. Сын Люцифера» полную версию (144 дня) без редакторских правок.">
+<meta name="twitter:description" content="«Сын Люцифера / Искушение» полная версия (144 дня / новеллы) без редакторских правок — читать онлайн бесплатно.">
 <meta name="twitter:image" content="http://xn----8sbgbitbekygtz.xn--p1ai/искушение-сын-люцифера.jpg">
 
 
@@ -197,7 +197,7 @@
     </a>
   </div>
     
-      <h1 class="site-subtitle" itemprop="description">Читать онлайн «Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги.</h1>
+      <h1 class="site-subtitle" itemprop="description">«Искушение. Сын Люцифера» (полная версия — 144 дня) и другие книги — читать онлайн.</h1>
     
 </div>
 
@@ -349,8 +349,8 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
                 
-                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-02-18T03:05:13+03:00">
-                    2017-02-18
+                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-04-28T12:21:49+03:00">
+                    2017-04-28
                   </time>
             
           </span>
@@ -406,7 +406,7 @@
 
           
               <div class="post-description">
-                  Читать онлайн «Искушение. Сын Люцифера» полную версию (144 дня) без редакторских правок.
+                  «Сын Люцифера / Искушение» полная версия (144 дня / новеллы) без редакторских правок — читать онлайн бесплатно.
               </div>
           
 
@@ -729,6 +729,7 @@
       $('.popup').hide();
       $('#local-search-input').val('');
       $('.search-result-list').remove();
+      $('#no-result').remove();
       $(".local-search-pop-overlay").remove();
       $('body').css('overflow', '');
     }
@@ -745,6 +746,13 @@
     // search function;
     var searchFunc = function(path, search_id, content_id) {
       'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"><img id="search-loading-img" src="/images/search-loading.svg"/></div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-img").css('margin', '20% auto 0 auto');
+
       $.ajax({
         url: path,
         dataType: "xml",
@@ -980,9 +988,15 @@
               }
             });
           }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
           proceedsearch();
         }
-      });}
+      });
+    }
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
@@ -997,6 +1011,13 @@
     $('.popup-btn-close').click(onPopupClose);
     $('.popup').click(function(e){
       e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
     });
   </script>
 
