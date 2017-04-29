@@ -59,7 +59,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.2.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Книги, Сергея, Мавроди, Искушение, Сын Люцифера, Полная, Версия, 144 дня" />
@@ -73,7 +73,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.2.0" />
 
 
 
@@ -94,7 +94,7 @@
 И спросил у Люцифера Его Сын:– Почему Христос не захотел с Тобой разговаривать в пустыне, а сказал: «Отойди от Меня, сатана»?
 
 И ответил, усмехнувшись, Люцифер Своему сыну">
-<meta property="og:updated_time" content="2017-01-26T02:50:41.000Z">
+<meta property="og:updated_time" content="2017-04-29T07:34:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Искушение. Сын Люцифера — День 11, Сатанист">
 <meta name="twitter:description" content="И настал одиннадцатый день.
@@ -359,8 +359,8 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
                 
-                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-01-26T05:50:41+03:00">
-                    2017-01-26
+                  <time title="Дата обновления записи" itemprop="dateModified" datetime="2017-04-29T10:34:56+03:00">
+                    2017-04-29
                   </time>
             
           </span>
@@ -506,7 +506,7 @@
 <p><strong>В:</strong> Э-э!.. Э!.. Кха… Кхе…</p>
 <p><br></p>
 <p><strong>С</strong> (опять смеется): Да шучу я, шучу, не переживайте Вы так! Богу не до нас с вами, у него и других дел полно. Ну, помолитесь, в крайнем случае, лишний раз…</p>
-<p>Что же касается Вашего вопроса, то обратите внимание, что в том же Апокалипсисе вовсе не утверждается, что царство Зверя, торжество Сатаны, означает конец света, великие и неисчислимые бедствия, несчастия и страдания людей. Отнюдь! Ничего подобного! Скорее даже, наоборот.</p>
+<p>Что же касается Вашего вопроса, то обратите внимание, что в том же Апокалипсисе вовсе не утверждается, что царство Зверя, торжество Сатаны, означает конец света, великие и неисчислимые бедствия, несчастья и страдания людей. Отнюдь! Ничего подобного! Скорее даже, наоборот.</p>
 <p>Все народы, судя по всему, были под властью Сатаны вполне довольны и счастливы. Их это царство вполне устраивало.</p>
 <p>Но это, естественно, не понравилось Богу, вызвало Его ярость, и тогда Он наслал на людей «семь Ангелов, имеющих семь последних язв, которыми оканчивается ярость Божия». То есть получается, что Сатана победил, воцарился на земле, люди под его властью процветали, были вполне счастливы и всем довольны, и тогда Бог, видя, что он окончательно проиграл, попросту уничтожил землю, напустив на людей этих самых Ангелов. Выслав карателей.</p>
 <p>Причем люди так до самого конца и не захотели отступиться от Сатаны, не предали Его и защищали Его до последнего! Смотрите, что происходило!</p>
@@ -885,32 +885,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.2.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.2.0"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.2.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.2.0"></script>
 
 
 
@@ -933,10 +933,13 @@
   <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
+    var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "search.json";
     if (search_path.length === 0) {
       search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
     }
     var path = "/" + search_path;
     // monitor main search box;
@@ -965,25 +968,29 @@
 
       // start loading animation
       $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"><img id="search-loading-img" src="/images/search-loading.svg"/></div>')
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
         .css('overflow', 'hidden');
-      $("#search-loading-img").css('margin', '20% auto 0 auto');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
       $.ajax({
         url: path,
-        dataType: "xml",
+        dataType: isXml ? "xml" : "json",
         async: true,
-        success: function( xmlResponse ) {
+        success: function(res) {
           // get the contents from search data
           isfetched = true;
           $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
+          var datas = isXml ? $("entry", res).map(function() {
             return {
-              title: $( "title", this ).text(),
+              title: $("title", this).text(),
               content: $("content",this).text(),
-              url: $( "url" , this).text()
+              url: $("url" , this).text()
             };
-          }).get();
+          }).get() : res;
           var input = document.getElementById(search_id);
           var resultContent = document.getElementById(content_id);
           var inputEventFunction = function() {
@@ -1247,12 +1254,12 @@
 
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.0"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.2.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.2.0"></script>
 
 
   
-    <script type="text/javascript" src="/js/src/exturl.js?v=5.1.0"></script>
+    <script type="text/javascript" src="/js/src/exturl.js?v=5.2.0"></script>
   
 
 </body>
